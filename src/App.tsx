@@ -14,7 +14,7 @@ function App() {
   var arregloPersonas = [{
     nombre: 'inti',
     edad: 26,
-    avatar: 'https://definicion.de/wp-content/uploads/2013/03/perro-1.jpg',
+    avatar: 'https://juanbenitez2600.github.io/pruebajuego/',
     description: "bien wapo"    
   }]
 
@@ -28,17 +28,17 @@ function App() {
   return (
     <div className="App">
       <div>
-        <JuegoUnity></JuegoUnity>
+        {/* <JuegoUnity></JuegoUnity> */}
       </div>
       <div>
         {
           persona.map( sub =>{
             return (
-              <li key={ sub.nombre}>
-                <img src={sub.avatar} alt={`avatar for ${sub.nombre}`}></img>
+              <div key={ sub.nombre}>
+                <iframe src={sub.avatar}></iframe>
                 <h4>{sub.nombre} (<small>{sub.edad}</small>)</h4>
                 <p>{sub.description?.substring(0 ,10)}</p>
-              </li>
+              </div>
             )
           })
         }
