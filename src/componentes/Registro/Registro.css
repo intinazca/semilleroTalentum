@@ -1,0 +1,115 @@
+.cols {
+    display: flex;
+    height: 100% !important;
+    width: 100%;
+    margin-bottom: 0px;
+}
+
+#espacios{
+    margin-bottom: 2rem;
+}
+
+.i-tabla{
+    width: 25rem;
+    margin-top: 8rem;
+    margin-bottom: 12rem;
+}
+
+.i-container{
+    display: flex;
+}
+
+.i-input{
+    display: flex;
+    flex-direction: column;
+}
+
+.i-title {
+    color: #337B6F;
+    font-size: 36px;
+    font-weight: bold;
+    width: 34rem;
+}
+
+.i-subtitle{
+    color: #46bc8b ;
+    margin-right: 2rem;
+    cursor: pointer;
+}
+
+.rows {
+    height: 100%;
+    display: flex;
+}
+.i-campos{
+    color: #7A7A7A;
+}
+.columns1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F5F5F5;
+    height: 100%;
+}
+
+.columns2 {   
+    /* background: linear-gradient(180deg, rgba(70, 188, 139, 1) 0%, rgba(38, 77, 91, 1) 100%); */
+    background-image: url("https://raw.githubusercontent.com/intinazca/Image/master/maysketchaday___19_by_fabianrensch_da38k3z%201.png");
+}
+
+input{
+    border: 1px rgb(228, 228, 228) solid;
+    width: 90%;
+    height: 2.6rem;
+}
+
+.foto{
+    height: 30rem;
+    width: 49.2%;
+}
+
+.recorte{
+    height: 100%;
+    width: 100%;
+    clip-path: inset(0 0 0 10%);
+}
+
+.i-link{
+    color: #F5F5F5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 4.2rem;
+}
+
+.i-link2{
+    color: #46BC8B;
+    font-size: 20px;
+    margin-left: .4rem;
+}
+
+.i-fotoGanme{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin: 2rem;
+   margin-top: 8rem;
+   margin-bottom: 14rem;
+}
+
+#registro{
+    display: block;
+}
+
+.espacio{
+    margin-bottom: 9rem;
+}
+
+.relleno{
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+}
