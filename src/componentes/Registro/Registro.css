@@ -31,10 +31,14 @@
     width: 34rem;
 }
 
+#espacio{
+    margin-right: 1rem;
+}
 .i-subtitle{
     color: #46bc8b ;
     margin-right: 2rem;
     cursor: pointer;
+    font-size: 24px;
 }
 
 .rows {
@@ -59,8 +63,15 @@
 
 input{
     border: 1px rgb(228, 228, 228) solid;
+    width: 27rem;
+    height: 2.6rem;
+}
+
+select{
+    border: 1px rgb(228, 228, 228) solid;
     width: 90%;
     height: 2.6rem;
+    width: 27rem;
 }
 
 .foto{
@@ -103,7 +114,7 @@ input{
 }
 
 .espacio{
-    margin-bottom: 9rem;
+    margin-bottom: 5rem;
 }
 
 .relleno{
@@ -112,4 +123,19 @@ input{
     font-weight: bold;
     width: 100%;
     text-align: center;
+}
+
+.linea{
+    background-color: #46BC8B;
+    width: 95%;
+    height: 3px;
+}
+
+.i-btn{
+    font-size: 20px;
+    background-color: #46BC8B;
+    border-color:transparent;
+    color: white;
+    height: 4rem;
+    width: 27rem;
 }
