@@ -2,7 +2,9 @@ import React, { useEffect, Component, useState } from "react";
 import "./Registro.css"
 import 'bootstrap/dist/css/bootstrap.css';
 import axios from "axios";
-import {NavLink} from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
+
+export interface IRegistroProps { };
 
 var data: {
     usuario: String,
@@ -13,20 +15,21 @@ var data: {
     municipio: String
 }
 
-//class Localidad extends Component {
+class Localidad extends Component {
 
-// componentDidMount() {
-//     axios.get("https://restcountries.com/v3.1/all").
-//         then(Response => {
-//             this.setState(this.localidad = Response.data );
-//             console.log(this.localidad);
+    componentDidMount() {
 
-//         }).catch(error => {
-//             console.error(error)
-//         }
-//         )
-// }
-//}
+        axios.get("https://restcountries.com/v3.1/all").
+            then(Response => {
+                this.setState(data = Response.data);
+                console.log(data);
+
+            }).catch(error => {
+                console.error(error)
+            }
+            )
+    }
+}
 
 const Pais = () => {
     return (
@@ -75,7 +78,7 @@ const Registro = () => {
     }
 
     var arregloPaises = [{
-        pais: 'Argentina',
+        pais: 'paisConusltado',
         departamento: 'number',
         municipio: 'string',
     },
@@ -102,11 +105,11 @@ const Registro = () => {
                     <div id="espacios" className="i-container">
                         <div id="espacio">
                             <h2 className="i-subtitle" onClick={() => cambiar(1)}>Perfil</h2>
-                            { click ? (<div className="linea"></div>):(<div></div>)}
+                            {click ? (<div className="linea"></div>) : (<div></div>)}
                         </div>
                         <div>
                             <h2 className="i-subtitle" onClick={() => cambiar(2)}>Localidad</h2>
-                            { click ? (<div></div>):(<div className="linea"></div>)}
+                            {click ? (<div></div>) : (<div className="linea"></div>)}
                         </div>
                     </div>
                     {click ? (
@@ -185,7 +188,11 @@ const Registro = () => {
                         <p className="relleno">The Forest Temple es un Videojuego Roguelike donde deberás explorar una misteriosa mazmorra llena de peligros y adversidades, ¿Listo para demostrar que tan lejos puedes llegar?</p>
                     </div>
                 </div>
-                <p className="i-link">¿Ya tienes una cuenta? Ingresa <a className="i-link2" href="">aquí</a></p>
+                <p className="i-link">¿Ya tienes una cuenta? Ingresa</p>
+                <nav className="i-link2">
+                    {/* <NavLink to="/apps">Aquí</NavLink> */}
+                    <a href='./apps'>Aquí</a>
+                </nav>
             </div>
 
         </div>
