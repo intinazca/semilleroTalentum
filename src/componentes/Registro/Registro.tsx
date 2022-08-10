@@ -2,11 +2,10 @@ import React, { useEffect, Component, useState } from "react";
 import "./Registro.css"
 import 'bootstrap/dist/css/bootstrap.css';
 import axios from "axios";
-import { Link, NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom";
+import UseForm from "./UseForm";
 
-export interface IRegistroProps { };
-
-var data: {
+type datos = {
     usuario: String,
     contrasena: String,
     edad: Number,
@@ -15,51 +14,87 @@ var data: {
     municipio: String
 }
 
-class Localidad extends Component {
+function data() {
+    axios.get("https://restcountries.com/v3.1/all").
+        then(Response => {            
+            console.log(Response.data);
 
-    componentDidMount() {
-
-        axios.get("https://restcountries.com/v3.1/all").
-            then(Response => {
-                this.setState(data = Response.data);
-                console.log(data);
-
-            }).catch(error => {
-                console.error(error)
-            }
-            )
-    }
+        }).catch(error => {
+            console.error(error)
+        })
 }
 
-const Pais = () => {
-    return (
-        <div id="registro">
-            <div id="espacios" className="i-input">
-                <p className="i-campos">País</p>
-                <select>
-                    <option value=""></option>
-                </select>
-            </div>
-            <div id="espacios" className="i-input">
-                <p className="i-campos">Departamento</p>
-                <select>
-                    <option value=""></option>
-                </select>
-            </div>
-            <div id="espacios" className="i-input">
-                <p className="i-campos">Municipio</p>
-                <select>
-                    <option value=""></option>
-                </select>
-            </div>
-            <div className="espacio">
-            </div>
-        </div>
-    )
+// class Localidad extends Component {
+
+//     componentDidMount() {
+
+//         axios.get("https://restcountries.com/v3.1/all").
+//             then(Response => {
+//                 this.setState(this.datos = Response.data);
+//                 console.log(this.datos);
+
+//             }).catch(error => {
+//                 console.error(error)
+//             }
+//             )
+//     }
+// }
+
+//data del formulario
+const initialForm = {
+    name:"",
+    password: "",
+    passwordC: "",
+    edad:"",
+}
+
+var errorss = {
+    name: '',
+    password: '',
+    passwordC: '',
+    edad:'',
+  }; //objeto que retorna el error
+// funcion que se manda a las variables de estado al validator de useform
+const validationForm = (form:any)=>{
+    // --expresiones regulares
+    let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
+    // let regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
+    // let bregexComments = /^.{1,255}$/;
+
+     if(!form.name.trim()){
+        errorss.name = "El campo 'usuario' es requerido"; 
+     }else if(!regexName.test(form.name.trim())){
+        errorss.name = "El campo 'usuario' solo acepta letras";
+     }else{
+        errorss.name = "";
+     }
+
+     if(!form.password.trim()){
+        errorss.password = "La contraseña es requerida"; 
+     }else{
+        errorss.password = "";
+     }
+
+     if(!form.passwordC.trim()){
+        errorss.passwordC = "Debe confirmar la constraseña"; 
+     }else if(form.passwordC.trim()!=(form.password.trim())){
+        errorss.passwordC = "Las contraseñas no coinciden";
+     }else{
+        errorss.passwordC = "";
+     }
+
+     if(!form.edad.trim()){
+        errorss.edad = "La edad es requerida"; 
+     }else{
+        errorss.edad = "";
+     }
+
+    return errorss;
 }
 
 const Registro = () => {
 
+    data();
     const [click, setClick] = useState(true);
     const cambiar = (tipo: number) => {
 
@@ -95,7 +130,9 @@ const Registro = () => {
         valorx(arregloPaises);
     }, []);
 
-
+    // validaciones formulario
+        const{form, errors, loanding, response, handleChangue, handleBlur, handleSubmit} = UseForm(initialForm, validationForm);
+    //
     return (
         <div className="cols" >
 
@@ -113,26 +150,30 @@ const Registro = () => {
                         </div>
                     </div>
                     {click ? (
-                        <div id="registro">
+                        <form id="registro" onSubmit={handleSubmit}>
                             <div id="espacios" className="i-input">
                                 <p className="i-campos">Usuario</p>
-                                <input id="usuario" type="text" />
+                                <input id="usuario" type="text" name="name" onBlur={handleBlur} onChange={handleChangue} value={form.name} required/>
+                                {errorss.name && <p className="alertas">{errorss.name}</p>}
                             </div>
                             <div id="espacios" className="i-input">
                                 <p className="i-campos">Contraseña</p>
-                                <input type="text" />
+                                <input type="text" name="password" onBlur={handleBlur} onChange={handleChangue} value={form.password} required/>
+                                {errorss.password && <p className="alertas">{errorss.password}</p>}
                             </div>
                             <div id="espacios" className="i-input">
                                 <p className="i-campos">Confirmar contraseña</p>
-                                <input type="text" />
+                                <input type="text"  name="passwordC" onBlur={handleBlur} onChange={handleChangue} value={form.passwordC} required/>
+                                {errorss.passwordC && <p className="alertas">{errorss.passwordC}</p>}
                             </div>
                             <div id="espacios" className="i-input">
                                 <p className="i-campos">Edad</p>
-                                <input type="text" />
+                                <input type="text" name="edad" onBlur={handleBlur} onChange={handleChangue} value={form.edad} required/>
+                                {errorss.edad && <p className="alertas">{errorss.edad}</p>}
                             </div>
-                        </div>
+                        </form >
                     ) : (
-                        <div id="registro">
+                        <form id="registro">
                             <div id="espacios" className="i-input">
                                 <p className="i-campos">País</p>
                                 <select>
@@ -140,7 +181,7 @@ const Registro = () => {
                                     {
                                         paises.map(sub => {
                                             return (
-                                                <option key={sub.pais}>{sub.pais}</option>
+                                                <option key={sub.pais.toString()} value={sub.pais}>{sub.pais}</option>
                                             )
                                         })
                                     }
@@ -154,7 +195,7 @@ const Registro = () => {
                                         paises.map(sub => {
 
                                             return (
-                                                <option key={sub.pais}>{sub.departamento}</option>
+                                                <option value={sub.departamento}>{sub.departamento}</option>
                                             )
                                         })
                                     }
@@ -167,7 +208,7 @@ const Registro = () => {
                                     {
                                         paises.map(sub => {
                                             return (
-                                                <option key={sub.pais}>{sub.municipio}</option>
+                                                <option value={sub.municipio}>{sub.municipio}</option>
                                             )
                                         })
                                     }
@@ -176,7 +217,7 @@ const Registro = () => {
                             <button disabled={false} type="button" className="i-btn">REGISTRAR</button>
                             <div className="espacio">
                             </div>
-                        </div>
+                        </form>
                     )}
 
                 </div>
@@ -190,8 +231,7 @@ const Registro = () => {
                 </div>
                 <p className="i-link">¿Ya tienes una cuenta? Ingresa</p>
                 <nav className="i-link2">
-                    {/* <NavLink to="/apps">Aquí</NavLink> */}
-                    <a href='./apps'>Aquí</a>
+                    <NavLink to="/">Aquí</NavLink>
                 </nav>
             </div>
 

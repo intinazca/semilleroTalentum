@@ -5,6 +5,11 @@
     margin-bottom: 0px;
 }
 
+.alertas{
+    margin-bottom: 0px !important;
+    color: rgb(226, 21, 21);
+}
+
 #espacios{
     margin-bottom: 2rem;
 }
