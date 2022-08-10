@@ -1,0 +1,121 @@
+.fondo_imagen{
+/* maysketchaday___19_by_fabianrensch_da38k3z 2 */
+
+position: absolute;
+width: 1440px;
+height: 1039px;
+left: 0px;
+top: 0px;
+
+background: url(https://raw.githubusercontent.com/JuanBenitez2600/imagenes/main/fondo.png);
+}
+.Rectangle_5{
+/* Rectangle 5 */
+
+position: absolute;
+width: 436px;
+height: 59px;
+left: 700px;
+top: 400px;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 24px;
+text-align: center;
+letter-spacing: 0.2em;
+
+color: #39344F;
+
+background: #46BC8B;
+box-shadow: 0px 0px 14px 5px rgba(57, 52, 79, 0.8);
+border-radius: 4px;
+}
+.boton_iniciar{
+/* Btn iniciar */
+
+position: absolute;
+width: 436px;
+height: 59px;
+left: 700px;
+top: 500px;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 24px;
+text-align: center;
+letter-spacing: 0.2em;
+
+color: #39344F;
+
+background: #46BC8B;
+box-shadow: 0px 0px 14px 5px rgba(57, 52, 79, 0.8);
+border-radius: 4px;
+}
+.recntagle_usuario{
+/* Rectangle  */
+
+position: absolute;
+width: 436px;
+height: 59px;
+left: 502px;
+top: 758px;
+
+background: #46BC8B;
+box-shadow: 0px 0px 14px 5px rgba(57, 52, 79, 0.8);
+border-radius: 4px;
+}
+.boton_cerrar_sesion{
+/* Rectangle 5 */
+
+position: absolute;
+width: 436px;
+height: 59px;
+left: 700px;
+top: 600px;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 24px;
+text-align: center;
+letter-spacing: 0.2em;
+
+color: #39344F;
+
+background: #46BC8B;
+box-shadow: 0px 0px 14px 5px rgba(57, 52, 79, 0.8);
+border-radius: 4px;
+}
+.recntagle_usuario2{
+/* Rectangle 5 */
+
+position: absolute;
+width: 436px;
+height: 59px;
+left: 502px;
+top: 873px;
+
+background: #46BC8B;
+box-shadow: 0px 0px 14px 5px rgba(57, 52, 79, 0.8);
+border-radius: 4px;
+}
+.letras_the_forest{
+/* The Forest Templ */
+
+position: absolute;
+width: 1104px;
+height: 132px;
+left: 168px;
+top: 139px;
+
+font-family: 'Alagard';
+font-style: normal;
+font-weight: 500;
+font-size: 128px;
+line-height: 132px;
+}
