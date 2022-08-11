@@ -14,16 +14,16 @@ function Estadisticas() {
 
     <div className="background">
 
-      <div className='i-header'>
+      <div className='i-header e-header'>
         <NavLink to={"/Juego_Usuario"}>
-          <div className="undo"></div>
+          <button className="undo"></button>
         </NavLink>
-        <h1 className="ESTADSTICAS">Estadisticas</h1>
+        <h1 className="estadisticas">Estadisticas</h1>
       </div>
-      <div className='i-container'>
+      <div className='i-container e-container'>
 
-        <div className='i-grafico'>
-          <div>
+        <div className='e-grafico'>
+          <div className='i-indicadores'>
             <span className="info_partidas">Información sobre tus últimas 10 partidas</span>
 
             <select name="color" className="rectangle_7">
@@ -38,20 +38,27 @@ function Estadisticas() {
         <div className='i-datos'>
           <span className="mejores_puntajes">Mejores Puntajes</span>
 
-          <div className="rectangle_8"></div>
-          <div className="rectangle_20"></div>
-          <span className="puntaje">Puntaje</span>
-          <span className="puntaje_523">523</span>
+          <div className='i-card sombra'>
+            <div className='i-titlecard'>
+              <p className='e-title'>Puntaje</p>
+            </div>
+            <h1 id='puntaje'> {puntaje}</h1>
+          </div>
 
-          <div className="rectangle_18"></div>
-          <div className="rectangle_21"></div>
-          <span className="numero_de_oleadas">Numero de oleadas</span>
-          <span className="puntaje_2">5</span>
+          <div className='i-card sombra'>
+            <div className='i-titlecard oleadas'>
+              <p className='e-title i-oleadas'>Número de oleadas</p>
+            </div>
+            <h1 id='puntaje' className='i-oleadas'> {numOleadas}</h1>
+          </div>
 
-          <div className="rectangle_19"></div>
-          <div className="rectangle_22"></div>
-          <span className="total_enemigos_eliminados">Total enemigos eliminados</span>
-          <span className="puntaje_3">25</span>
+          <div className='i-card sombra'>
+            <div className='i-titlecard eliminados'>
+              <p className='e-title i-eliminados'>Total enemigos eliminados</p>
+            </div>
+            <h1 id='puntaje' className='i-eliminados'> {eliminados}</h1>
+          </div>
+
         </div>
 
       </div>

@@ -34,7 +34,7 @@ export const options = {
         },
         title: {
             display: true,
-            text: 'Partidas',
+            text: '',
         },
     },
 };
@@ -64,7 +64,7 @@ export const data = {
 
 const Grafico: React.FunctionComponent<puntaje> = ({ puntaje, numOleadas, eliminados }) => {
     return (
-        <div className="i-grafico">
+        <div className="i-grafico sombra">
             {/* <h1>puntaje: {puntaje}</h1> */}
             <Bar options={options} data={data} />
         </div>

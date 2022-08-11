@@ -1,290 +1,352 @@
-.background{
-    position: relative;
+.background {
     width: 100%;
     height: 1024px;
-    
-    background: linear-gradient(180deg, #46BC8B 0%, #264D5B 100%);  
+    background: linear-gradient(180deg, #46BC8B 0%, #264D5B 100%);
 }
-.estadisticas{
-/* ESTADÍSTICAS */
 
-position: absolute;
-width: 548px;
-height: 49px;
-left: 446px;
-top: 72px;
-
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 700;
-font-size: 40px;
-line-height: 49px;
-/* identical to box height */
-text-align: center;
-letter-spacing: 0.2em;
-
-color: #F5F5F5;
+.estadisticas {
+    /* ESTADÍSTICAS */
+    height: 49px;
+    left: 446px;
+    top: 72px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 49px;
+    /* identical to box height */
+    text-align: center;
+    letter-spacing: 0.2em;
+    color: #F5F5F5;
 }
-.info_partidas{
-/* Información sobre tus últimas 10 partidas */
 
-position: absolute;
-width: 588px;
-height: 34px;
-left: 180px;
-top: 216px;
+.info_partidas {
+    /* Información sobre tus últimas 10 partidas */
 
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 500;
-font-size: 28px;
-line-height: 34px;
+    width: 588px;
+    height: 34px;
+    left: 180px;
+    top: 216px;
 
-color: #F5F5F5;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 34px;
+
+    color: #F5F5F5;
 }
-.mejores_puntajes{
+
+.mejores_puntajes {
     /* Mejores Puntajes */
-    
-    position: absolute;
+
     width: 285px;
-    height: 39px;
+    height: 32px;
     left: 1200px;
     top: 191px;
-    
+
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
     font-size: 32px;
     line-height: 39px;
     /* identical to box height */
-    
+
     color: #FFFFFF;
 }
-.undo{
 
-/* Undo */
+.undo {
+    /* Undo */
 
-position: absolute;
-width: 60px;
-height: 60px;
-left: 45px;
-top: 35px;
-
-background: url(https://raw.githubusercontent.com/JuanBenitez2600/imagenes/main/undo.png);
+    width: 60px;
+    height: 60px;
+    border: 0px;
+    background: url(https://raw.githubusercontent.com/JuanBenitez2600/imagenes/main/undo.png);
 }
-.rectangle_8{
 
-/* Rectangle 8 */
+.rectangle_8 {
 
-position: absolute;
-width: 298px;
-height: 166px;
-left: 1200px;
-top: 275px;
+    /* Rectangle 8 */
 
-background: #FFFFFF;
-border-radius: 4px;
+    width: 298px;
+    height: 166px;
+    left: 1200px;
+    top: 275px;
+
+    background: #FFFFFF;
+    border-radius: 4px;
 }
-.rectangle_20{
-/* Rectangle 20 */
 
-position: absolute;
-width: 298px;
-height: 34px;
-left: 1200px;
-top: 275px;
+.rectangle_20 {
+    /* Rectangle 20 */
 
-background: rgba(9, 131, 175, 0.15);
-border-radius: 4px;
+    width: 298px;
+    height: 34px;
+    left: 1200px;
+    top: 275px;
+
+    background: rgba(9, 131, 175, 0.15);
+    border-radius: 4px;
 }
-.rectangle_18{
-/* Rectangle 18 */
 
-position: absolute;
-width: 298px;
-height: 166px;
-left: 1200px;
-top: 490px;
+.rectangle_18 {
+    /* Rectangle 18 */
+    width: 298px;
+    height: 166px;
+    left: 1200px;
+    top: 490px;
 
-background: #FFFFFF;
-border-radius: 4px;
+    background: #FFFFFF;
+    border-radius: 4px;
 }
-.rectangle_21{
-/* Rectangle 21 */
 
-position: absolute;
-width: 298px;
-height: 38px;
-left: 1200px;
-top: 490px;
+.rectangle_21 {
+    /* Rectangle 21 */
 
-background: rgba(70, 188, 139, 0.15);
-border-radius: 4px;
+    width: 298px;
+    height: 38px;
+    left: 1200px;
+    top: 490px;
+
+    background: rgba(70, 188, 139, 0.15);
+    border-radius: 4px;
 }
-.numero_de_oleadas{
-/* Número de oleadas */
 
+.numero_de_oleadas {
+    /* Número de oleadas */
 
-position: absolute;
-width: 298px;
-height: 34px;
-left: 1250px;
-top: 491px;
+    width: 298px;
+    height: 34px;
+    left: 1250px;
+    top: 491px;
 
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 24px;
-display: flex;
-align-items: center;
-text-align: center;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
 
-color: #46BC8B;
+    color: #46BC8B;
 
 }
-.rectangle_19{
-/* Rectangle 19 */
 
-position: absolute;
-width: 298px;
-height: 166px;
-left: 1200px;
-top: 706px;
+.rectangle_19 {
+    /* Rectangle 19 */
 
-background: #FFFFFF;
-border-radius: 4px;
+    width: 298px;
+    height: 166px;
+    left: 1200px;
+    top: 706px;
+
+    background: #FFFFFF;
+    border-radius: 4px;
 }
-.rectangle_22{
-/* Rectangle 22 */
 
-position: absolute;
-width: 298px;
-height: 34px;
-left: 1200px;
-top: 706px;
+.rectangle_22 {
+    /* Rectangle 22 */
 
-background: rgba(149, 31, 95, 0.15);
-border-radius: 4px;
+    width: 298px;
+    height: 34px;
+    left: 1200px;
+    top: 706px;
+
+    background: rgba(149, 31, 95, 0.15);
+    border-radius: 4px;
 }
-.total_enemigos_eliminados{
-/* Total enemigos eliminados */
 
-position: absolute;
-width: 298px;
-height: 34px;
-left: 1215px;
-top: 706px;
+.total_enemigos_eliminados {
+    /* Total enemigos eliminados */
 
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 24px;
-display: flex;
-align-items: center;
-text-align: center;
+    width: 298px;
+    height: 34px;
+    left: 1215px;
+    top: 706px;
 
-color: #951F5F;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #951F5F;
 }
-.puntaje{
-/* Puntaje */
 
-position: absolute;
-width: 298px;
-height: 34px;
-left: 1310px;
-top: 275px;
+.puntaje {
+    /* Puntaje */
 
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 24px;
-display: flex;
-align-items: center;
-text-align: center;
+    width: 298px;
+    height: 34px;
+    left: 1310px;
+    top: 275px;
 
-color: #0983AF;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #0983AF;
 }
-.puntaje_523{
 
-/* 523 */
+.puntaje_523 {
 
-position: absolute;
-width: 168px;
-height: 136px;
-left: 1270px;
-top: 305px;
+    /* 523 */
 
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 600;
-font-size: 80px;
-line-height: 98px;
-display: flex;
-align-items: center;
-text-align: center;
+    width: 168px;
+    height: 136px;
+    left: 1270px;
+    top: 305px;
 
-color: #0983AF;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 80px;
+    line-height: 98px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #0983AF;
 }
-.puntaje_2{
 
-/* 5 */
+.puntaje_2 {
 
-position: absolute;
-width: 168px;
-height: 128px;
-left: 1325px;
-top: 527px;
+    /* 5 */
 
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 600;
-font-size: 80px;
-line-height: 98px;
-display: flex;
-align-items: center;
-text-align: center;
+    width: 168px;
+    height: 128px;
+    left: 1325px;
+    top: 527px;
 
-color: #46BC8B;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 80px;
+    line-height: 98px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #46BC8B;
 }
-.puntaje_3{
 
-/* 25 */
+.puntaje_3 {
 
-position: absolute;
-width: 168px;
-height: 98px;
-left: 1260px;
-top: 756px;
+    /* 25 */
 
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 600;
-font-size: 80px;
-line-height: 98px;
-/* identical to box height */
-text-align: center;
+    width: 168px;
+    height: 98px;
+    left: 1260px;
+    top: 756px;
 
-color: #951F5F;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 80px;
+    line-height: 98px;
+    /* identical to box height */
+    text-align: center;
+
+    color: #951F5F;
 }
-.rectangle_7{
-/* Rectangle 7 */
 
+.rectangle_7 {
+    /* Rectangle 7 */
 
-position: absolute;
-width: 292px;
-height: 46px;
-left: 800px;
-top: 210px;
+    width: 292px;
+    height: 46px;
+    left: 800px;
+    top: 210px;
 
-background: #FFFFFF;
-border-radius: 4px;
+    background: #FFFFFF;
+    border-radius: 4px;
 }
 
 
 /* css inti */
-.i-header{
-    
+.e-header {
+    display: block;
+}
+
+.e-container {
+    justify-content: space-around;
+}
+
+.e-grafico {
+    width: 70% !important;
+    padding: 1rem;
+    height: 100%;
+    padding-bottom: 0px !important;
+}
+
+.i-indicadores {
+    display: flex;
+    justify-content: space-between;
+}
+
+.i-datos {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+}
+
+.i-card {
+    width: 18.5rem;
+    height: 10.3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 0.5rem;
+}
+
+.sombra {
+    -webkit-box-shadow: 0px 0px 19px 2px rgba(97, 97, 97, 1);
+    -moz-box-shadow: 0px 0px 19px 2px rgba(97, 97, 97, 1);
+    box-shadow: 0px 0px 19px 2px rgba(97, 97, 97, 1);
+}
+
+.e-title {
+    font-size: 20px;
+    margin: 0.3rem;
+    color: #0983AF;
+}
+
+.i-oleadas {
+    color: #46BC8B !important;
+}
+
+.i-titlecard {
+    width: inherit;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(9, 131, 175, 0.15);
+    border-radius: 0.5rem 0.5rem 0rem 0rem;
+}
+
+.oleadas {
+    background-color: rgba(70, 188, 139, 0.15) !important;
+}
+
+#puntaje {
+    color: #0983AF;
+    font-size: 80px;
+}
+
+.eliminados {
+    background-color: rgba(149, 31, 95, 0.15) !important;
+}
+
+.i-eliminados {
+    color: #951F5F !important;
 }
