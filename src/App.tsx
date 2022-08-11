@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Registro from './componentes/Registro/Registro';
 import Estadisticas from './componentes/Estadisticas/Estadisticas';
 import Juego_Usuario from './componentes/Juego_Usuario/Juego_Usuario';
+import Grafico from './componentes/Estadisticas/Grafico/Gracfico';
 //app es el componente que renderiza
 function App() {
   
@@ -19,7 +20,6 @@ function App() {
                 <Route path="/Registro" element={<Registro/>} />
                 <Route path="/Estadisticas" element={<Estadisticas/>} />
                 <Route path="/Juego_Usuario" element={<Juego_Usuario/>} />
-
             </Routes>
         </BrowserRouter>
       

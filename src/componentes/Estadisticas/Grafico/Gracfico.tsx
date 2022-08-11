@@ -64,7 +64,7 @@ export const data = {
 
 const Grafico: React.FunctionComponent<puntaje> = ({ puntaje, numOleadas, eliminados }) => {
     return (
-        <div>
+        <div className="i-grafico">
             {/* <h1>puntaje: {puntaje}</h1> */}
             <Bar options={options} data={data} />
         </div>
