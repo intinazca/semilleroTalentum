@@ -8,16 +8,32 @@ function Juego_Usuario() {
   return (
 
     <div className="fondo" >
-      <NavLink to={""}>
-        <button className="Rectangle_5">Jugar</button>
-      </NavLink>
-      <NavLink to={"/Estadisticas"}>
-        <button className="boton_iniciar">Estadisticas</button>
-      </NavLink>
-      <NavLink to={"/"}>
-        <button className="boton_cerrar_sesion">Cerrar sesión</button>
-      </NavLink>
-      <h1 className="titulo">The Forest temple</h1>
+      <h2 className="text-center  mt-6 " id="titulo">The Forest Temple</h2>
+
+      <div id="probado">
+        <div className="text-center  mt-6">
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <NavLink to={"/Vista_Juego"}>
+        <button className="btn btn-primary" id="Rectangle_5" type="button">Jugar</button>
+        </NavLink>
+        <br />
+        <br />
+        <NavLink to={"/Estadisticas"}>
+        <button className="btn btn-primary" id="Rectangle_5" type="button">Estadisticas</button>
+        </NavLink>
+        <br />
+        <br />
+        <NavLink to={"/"}>
+        <button className="btn btn-primary" id="Rectangle_5" type="button">Cerrar sesión</button>
+        </NavLink>
+        </div>
+        </div>
+
+
     </div>
   )
 }

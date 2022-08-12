@@ -20,6 +20,7 @@ function Estadisticas() {
         </NavLink>
         <h1 className="estadisticas">Estadisticas</h1>
       </div>
+      
       <div className='i-container e-container'>
 
         <div className='e-grafico'>

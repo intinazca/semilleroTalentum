@@ -7,6 +7,8 @@ import Registro from './componentes/Registro/Registro';
 import Estadisticas from './componentes/Estadisticas/Estadisticas';
 import Juego_Usuario from './componentes/Juego_Usuario/Juego_Usuario';
 import Grafico from './componentes/Estadisticas/Grafico/Gracfico';
+import Vista_Juego from './componentes/Vista_Juego/Vista_Juego';
+
 //app es el componente que renderiza
 function App() {
   
@@ -20,6 +22,7 @@ function App() {
                 <Route path="/Registro" element={<Registro/>} />
                 <Route path="/Estadisticas" element={<Estadisticas/>} />
                 <Route path="/Juego_Usuario" element={<Juego_Usuario/>} />
+                <Route path="/Vista_Juego" element={<Vista_Juego/>} />
             </Routes>
         </BrowserRouter>
       

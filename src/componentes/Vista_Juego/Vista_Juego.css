@@ -1,0 +1,13 @@
+.alienar{
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+.undo {
+    /* Undo */
+
+    width: 60px;
+    height: 60px;
+    border: 0px;
+    background: url(https://raw.githubusercontent.com/JuanBenitez2600/imagenes/main/undo.png);
+}
