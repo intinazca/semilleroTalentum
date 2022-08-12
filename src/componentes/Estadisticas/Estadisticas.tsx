@@ -5,7 +5,7 @@ import Grafico from './Grafico/Gracfico';
 import { NavLink } from 'react-router-dom';
 
 function Estadisticas() {
-  let puntaje = 5;
+  let puntaje = 500;
   let numOleadas = 10;
   let eliminados = 200;
 

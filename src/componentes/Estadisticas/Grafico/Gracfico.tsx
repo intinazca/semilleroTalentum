@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import "./Grafico.css"
 import {
     Chart as ChartJS,
@@ -15,6 +15,24 @@ interface puntaje {
     puntaje: number,
     numOleadas: number,
     eliminados: number,
+}
+
+const Grafico: React.FunctionComponent<puntaje> = ({ puntaje, numOleadas, eliminados }) => {
+    
+    const generarChar = () =>{
+        const data: number[] = []
+        data.push(puntaje ,numOleadas, eliminados)
+        console.log(data);
+        return{
+
+        }   
+    }
+   
+    return (
+        <div className="i-grafico sombra">
+            <Bar options={options} data={data} />
+        </div>
+    )    
 }
 
 ChartJS.register(
@@ -40,35 +58,32 @@ export const options = {
 };
 
 const labels = ['1', '2', '3', '4'];
-const kk =[2,3,4,5];
-export const data = {
+
+export var data = {
     labels,
     datasets: [
+
         {
             label: 'Puntaje',
-            data: [1],
-            backgroundColor: 'rgba(255, 99, 132, 0.5)',
+            data: [500],
+            backgroundColor: 'rgba(9, 131, 175, 1)',
+            borderRadius: Number.MAX_VALUE,
+           
         },
         {
             label: 'Oleadas',
-            data: [8],
-            backgroundColor: 'rgba(53, 162, 235, 0.5)',
+            data: [10],
+            backgroundColor: 'rgba(51, 123, 111, 1)',
+            borderRadius: Number.MAX_VALUE,
         },
         {
             label: 'Enemigos eliminados',
-            data: [5],
-            backgroundColor: 'rgba(0, 0, 235, 0.5)',
+            data: [200],
+            backgroundColor: 'rgba(149, 31, 95, 1)',
+            borderRadius: Number.MAX_VALUE,
         },
     ],
-}
-
-const Grafico: React.FunctionComponent<puntaje> = ({ puntaje, numOleadas, eliminados }) => {
-    return (
-        <div className="i-grafico sombra">
-            {/* <h1>puntaje: {puntaje}</h1> */}
-            <Bar options={options} data={data} />
-        </div>
-    )
+    backgroundColor: ['rgba(9, 131, 175, 1)', 'rgba(51, 123, 111, 1)', 'rgba(149, 31, 95, 1)'],
 }
 
 export default Grafico;

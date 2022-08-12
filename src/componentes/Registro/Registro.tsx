@@ -113,14 +113,14 @@ const Registro = () => {
     }
 
     var arregloPaises = [{
-        pais: 'paisConusltado',
-        departamento: 'number',
-        municipio: 'string',
+        pais: 'Colombia',
+        departamento: 'Valle del cauca',
+        municipio: 'Cali',
     },
     {
-        pais: 'Colombia',
-        departamento: 'number',
-        municipio: 'string',
+        pais: 'Venezuela',
+        departamento: 'Choco',
+        municipio: 'Palmira',
     }
     ]
 
