@@ -16,7 +16,7 @@ type datos = {
 
 function data() {
     axios.get("https://restcountries.com/v3.1/all").
-        then(Response => {            
+        then(Response => {
             console.log(Response.data);
 
         }).catch(error => {
@@ -42,59 +42,80 @@ function data() {
 
 //data del formulario
 const initialForm = {
-    name:"",
+    name: "",
     password: "",
     passwordC: "",
-    edad:"",
+    edad: "",
+    pais: "",
+    departamento: "",
+    ciudad: ""
 }
 
 var errorss = {
     name: '',
     password: '',
     passwordC: '',
-    edad:'',
-  }; //objeto que retorna el error
+    edad: '',
+}; 
+//objeto que retorna el error
 // funcion que se manda a las variables de estado al validator de useform
-const validationForm = (form:any)=>{
+const validationForm = (form: any) => {
     // --expresiones regulares
     let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
     // let regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
     // let bregexComments = /^.{1,255}$/;
 
-     if(!form.name.trim()){
-        errorss.name = "El campo 'usuario' es requerido"; 
-     }else if(!regexName.test(form.name.trim())){
+    if (!form.name.trim()) {
+        errorss.name = "El campo 'usuario' es requerido";
+    } else if (!regexName.test(form.name.trim())) {
         errorss.name = "El campo 'usuario' solo acepta letras";
-     }else{
+    } else {
         errorss.name = "";
-     }
+    }
 
-     if(!form.password.trim()){
-        errorss.password = "La contraseña es requerida"; 
-     }else{
+    if (!form.password.trim()) {
+        errorss.password = "La contraseña es requerida";
+    } else {
         errorss.password = "";
-     }
+    }
 
-     if(!form.passwordC.trim()){
-        errorss.passwordC = "Debe confirmar la constraseña"; 
-     }else if(form.passwordC.trim()!=(form.password.trim())){
+    if (!form.passwordC.trim()) {
+        errorss.passwordC = "Debe confirmar la constraseña";
+    } else if (form.passwordC.trim() != (form.password.trim())) {
         errorss.passwordC = "Las contraseñas no coinciden";
-     }else{
+    } else {
         errorss.passwordC = "";
-     }
+    }
 
-     if(!form.edad.trim()){
-        errorss.edad = "La edad es requerida"; 
-     }else{
+    if (!form.edad.trim()) {
+        errorss.edad = "La edad es requerida";
+    } else {
         errorss.edad = "";
-     }
+    }
 
     return errorss;
 }
 
+var arregloPaises = [
+    {
+        pais: '',
+        departamento: '',
+        ciudad: '',
+    }
+];
+
+axios.get("https://63002ebb9350a1e548eae86a.mockapi.io/ciudades").
+    then(Response => {
+        arregloPaises = Response.data;
+        console.log(arregloPaises);
+
+    }).catch(error => {
+        console.error(error)
+    })
+
+
 const Registro = () => {
 
-    data();
     const [click, setClick] = useState(true);
     const cambiar = (tipo: number) => {
 
@@ -102,36 +123,22 @@ const Registro = () => {
             setClick(true);
         } else if (tipo == 2) {
             setClick(false);
-
         }
     }
 
     interface Paises {
         pais: string,
         departamento: string,
-        municipio: string,
+        ciudad: string,
     }
-
-    var arregloPaises = [{
-        pais: 'Colombia',
-        departamento: 'Valle del cauca',
-        municipio: 'Cali',
-    },
-    {
-        pais: 'Venezuela',
-        departamento: 'Choco',
-        municipio: 'Palmira',
-    }
-    ]
 
     const [paises, valorx] = useState<Array<Paises>>([]);
-
     useEffect(() => {
         valorx(arregloPaises);
     }, []);
 
     // validaciones formulario
-        const{form, errors, loanding, response, handleChangue, handleBlur, handleSubmit} = UseForm(initialForm, validationForm);
+    const { form, errors, loanding, response, handleChangue, handleBlur, handleSubmit } = UseForm(initialForm, validationForm);
     //
     return (
         <div className="cols" >
@@ -153,22 +160,22 @@ const Registro = () => {
                         <form id="registro" onSubmit={handleSubmit}>
                             <div id="espacios" className="i-input">
                                 <p className="i-campos">Usuario</p>
-                                <input id="usuario" type="text" name="name" onBlur={handleBlur} onChange={handleChangue} value={form.name} required/>
+                                <input id="usuario" type="text" name="name" onBlur={handleBlur} onChange={handleChangue} value={form.name} required />
                                 {errorss.name && <p className="alertas">{errorss.name}</p>}
                             </div>
                             <div id="espacios" className="i-input">
                                 <p className="i-campos">Contraseña</p>
-                                <input type="text" name="password" onBlur={handleBlur} onChange={handleChangue} value={form.password} required/>
+                                <input type="text" name="password" onBlur={handleBlur} onChange={handleChangue} value={form.password} required />
                                 {errorss.password && <p className="alertas">{errorss.password}</p>}
                             </div>
                             <div id="espacios" className="i-input">
                                 <p className="i-campos">Confirmar contraseña</p>
-                                <input type="text"  name="passwordC" onBlur={handleBlur} onChange={handleChangue} value={form.passwordC} required/>
+                                <input type="text" name="passwordC" onBlur={handleBlur} onChange={handleChangue} value={form.passwordC} required />
                                 {errorss.passwordC && <p className="alertas">{errorss.passwordC}</p>}
                             </div>
                             <div id="espacios" className="i-input">
                                 <p className="i-campos">Edad</p>
-                                <input type="text" name="edad" onBlur={handleBlur} onChange={handleChangue} value={form.edad} required/>
+                                <input type="text" name="edad" onBlur={handleBlur} onChange={handleChangue} value={form.edad} required />
                                 {errorss.edad && <p className="alertas">{errorss.edad}</p>}
                             </div>
                         </form >
@@ -176,12 +183,12 @@ const Registro = () => {
                         <form id="registro">
                             <div id="espacios" className="i-input">
                                 <p className="i-campos">País</p>
-                                <select>
+                                <select onBlur={handleBlur} onChange={handleChangue}>
                                     <option></option>
                                     {
-                                        paises.map(sub => {
+                                        paises.map(sub => {                        
                                             return (
-                                                <option key={sub.pais.toString()} value={sub.pais}>{sub.pais}</option>
+                                                <option value={sub.pais}>{sub.pais}</option>
                                             )
                                         })
                                     }
@@ -189,7 +196,7 @@ const Registro = () => {
                             </div>
                             <div id="espacios" className="i-input">
                                 <p className="i-campos">Departamento</p>
-                                <select>
+                                <select onBlur={handleBlur} onChange={handleChangue} >
                                     <option></option>
                                     {
                                         paises.map(sub => {
@@ -203,23 +210,23 @@ const Registro = () => {
                             </div>
                             <div id="espacios" className="i-input">
                                 <p className="i-campos">Municipio</p>
-                                <select>
+                                <select onBlur={handleBlur} onChange={handleChangue} >
                                     <option></option>
                                     {
                                         paises.map(sub => {
                                             return (
-                                                <option value={sub.municipio}>{sub.municipio}</option>
+                                                <option value={sub.ciudad}>{sub.ciudad}</option>
                                             )
                                         })
                                     }
                                 </select>
                             </div>
-                            <button disabled={false} type="button" className="i-btn">REGISTRAR</button>
+                            <button onClick={handleSubmit} disabled={false} type="button" className="i-btn">REGISTRAR</button>
                             <div className="espacio">
                             </div>
                         </form>
                     )}
-
+                
                 </div>
             </div>
 
